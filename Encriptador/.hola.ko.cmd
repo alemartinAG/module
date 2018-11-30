@@ -1,0 +1,1 @@
+cmd_/home/ale/Desktop/module/Encriptador/hola.ko := ld -r -m elf_x86_64 -z max-page-size=0x200000 -T ./scripts/module-common.lds --build-id  -o /home/ale/Desktop/module/Encriptador/hola.ko /home/ale/Desktop/module/Encriptador/hola.o /home/ale/Desktop/module/Encriptador/hola.mod.o ;  true
