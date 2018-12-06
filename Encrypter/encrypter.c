@@ -109,16 +109,16 @@ static ssize_t dev_write(struct file *filep, const char *buffer, size_t len, lof
 
    int i = 0;
 
-   printk(KERN_INFO "\nEncrypt: %zu caracteres recibidos del usuario\n", len);
+   printk(KERN_INFO "Encrypt: %zu caracteres recibidos del usuario\n", len);
 
-   printk(KERN_INFO "\nEncrypt: Mensaje Recibido: %s\n", message);
+   printk(KERN_INFO "Encrypt: Mensaje Recibido: %s\n", message);
 
    while(i < len){
       message[i] = message[i] + code_value;
       i++;
    }
 
-   printk(KERN_INFO "\nEncrypt: Mensaje Encriptado: %s\n", message);
+   printk(KERN_INFO "Encrypt: Mensaje Encriptado: %s\n", message);
 
    return len;
 }

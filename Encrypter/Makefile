@@ -4,7 +4,7 @@ obj-m += encrypter.o
 
 all:
 	make -C $(KDIR) M=$(shell pwd) modules
-	$(CC) testebbchar.c -o test
+	$(CC) test-encrypt.c -o test
 
 clean:
 	make -C $(KDIR) M=$(shell pwd) clean
