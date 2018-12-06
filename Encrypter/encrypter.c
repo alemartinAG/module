@@ -52,7 +52,6 @@ static int __init encrypt_init(void){
       printk(KERN_ALERT "Fallo al registrar clase del dispositivo\n");
       return PTR_ERR(ebbcharClass);          // Correct way to return an error on a pointer
    }
-   printk(KERN_INFO "EBBChar: device class registered correctly\n");
  
    // Registro del driver del dispositivo
    ebbcharDevice = device_create(ebbcharClass, NULL, MKDEV(majorNumber, 0), NULL, DEVICE_NAME);
@@ -110,16 +109,16 @@ static ssize_t dev_write(struct file *filep, const char *buffer, size_t len, lof
 
    int i = 0;
 
-   printk(KERN_INFO "\n Encrypt: %zu caracteres recibidos del usuario\n", len);
+   printk(KERN_INFO "\nEncrypt: %zu caracteres recibidos del usuario\n", len);
 
-   printk(KERN_INFO "\n Encrypt: Mensaje Recibido: %s\n", message);
+   printk(KERN_INFO "\nEncrypt: Mensaje Recibido: %s\n", message);
 
    while(i < len){
       message[i] = message[i] + code_value;
       i++;
    }
 
-   printk(KERN_INFO "\n Encrypt: Mensaje Encriptado: %s\n", message);
+   printk(KERN_INFO "\nEncrypt: Mensaje Encriptado: %s\n", message);
 
    return len;
 }
