@@ -9,3 +9,6 @@ all:
 clean:
 	make -C $(KDIR) M=$(shell pwd) clean
 	rm test
+	rm -f modules.order Module.symvers
+	rm -f .??*cmd
+	rm -rf .tmp_versions

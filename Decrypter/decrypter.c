@@ -6,7 +6,7 @@
 #include <linux/uaccess.h>         // Required for the copy to user function
 
 #define  DEVICE_NAME "char-decrypt"
-#define  CLASS_NAME  "ebb"
+#define  CLASS_NAME  "ebb2"
  
 MODULE_LICENSE("GPL");            
  
@@ -126,7 +126,7 @@ static ssize_t dev_write(struct file *filep, const char *buffer, size_t len, lof
 
 //Se llama cuando el dispositivo es cerrado o liberado por el programa del espacio de usuario
 static int dev_release(struct inode *inodep, struct file *filep){
-   printk(KERN_INFO "EBBChar: Device successfully closed\n");
+   printk(KERN_INFO "Decrypt: Dispositivo cerrado exitosamente!\n");
    return 0;
 }
  

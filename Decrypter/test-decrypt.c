@@ -16,7 +16,7 @@ int main(){
 
    printf("\nEmpezando Prueba de Dispositivo\n");
    
-   fd = open("/dev/char-encrypt", O_RDWR);             // Open the device with read/write access
+   fd = open("/dev/char-decrypt", O_RDWR);             // Open the device with read/write access
    if (fd < 0){
       perror("Failed to open the device...");
       return errno;
@@ -24,7 +24,7 @@ int main(){
    
    while(1){
 
-      printf("\nEscribe el mensaje a encriptar\n(Escribe 'LEER' para leer el mensaje encriptado y 'EXIT' para salir)\n\n");
+      printf("\nEscribe el mensaje a desencriptar\n(Escribe 'LEER' para leer el mensaje encriptado y 'EXIT' para salir)\n\n");
       scanf("%[^\n]%*c", stringToSend);                //Read in a string (with spaces)
       //printf("Writing message to the device [%s].\n", stringToSend);
       
@@ -37,7 +37,7 @@ int main(){
             return errno;
          }
 
-         printf("El mensaje encriptado es: [%s]\n", receive);
+         printf("El mensaje desencriptado es: [%s]\n", receive);
       }
       else if(!strcmp(stringToSend, "EXIT")){
          
@@ -57,3 +57,4 @@ int main(){
    printf("Adios!\n");
    return 0;
 }
+
